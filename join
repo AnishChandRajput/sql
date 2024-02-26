@@ -10,7 +10,7 @@ create table empinfo(
 insert into empinfo values(1,"anish","chand","UIC","pd1","punjab","2004/10/04","male");
 insert into empinfo values(2,"sachin","kapoor","UIC","pc2","gujarat","2003/10/10","male");
 insert into empinfo values(3, "rita","rani","BSC","pd3","pune","2002/06/15","female");
-insert into empinfo values(4,"risha","kumari","HM","pd5","delhi","2004/09/02","female");
+insert into empinfo values(4,"roshni","kumari","HM","pd5","delhi","2004/09/02","female");
 
 create table empposition(empid int, empposition varchar(50),
 dateofjoining date,salary int);
