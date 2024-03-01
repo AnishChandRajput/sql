@@ -1,0 +1,20 @@
+CREATE TABLE books (
+    book_id INT PRIMARY KEY,
+    title VARCHAR(100),
+    publisher VARCHAR(100),
+    recomended_price DECIMAL(5,2),
+    genre_id INT,
+    FOREIGN KEY (genre_id) REFERENCES genre(genre_id)
+);
+
+CREATE TABLE author (
+    author_id INT PRIMARY KEY,
+    name VARCHAR(100)
+);
+CREATE TABLE borrowers (
+    borrower_id INT PRIMARY KEY,
+    name VARCHAR(100),
+    address VARCHAR(100),
+    birthdate DATE,
+    contact VARCHAR(50)
+);
