@@ -16,17 +16,17 @@ CREATE TABLE borrowers (
     contact VARCHAR(50)
 );
 insert into books(book_id,title,publisher,price)
-values(10,"python","PSF",3.50)
-      (11,"Magyk","Angie Sage",5.10)
+values(10,"python","PSF",3.50),
+      (11,"Magyk","Angie Sage",5.10),
       (12,"Rebecca","Victor",6.10);
     
 insert into author(author_id,name)
-values(276,"Rossum")
-      (453,"Angie")
+values(276,"Rossum"),
+      (453,"Angie"),
       (677,"Maurier");
-    
+
 insert into borrowers(borrower_id,name,address,birthdate,contact)
-values("765","Anish","#c3","10/04/2005","987778765")
-      ("765","Sagar","#d1","11/02/2004","343423452")
-      ("765","Nikhil","#d1","09/07/2002","453463352")
+values(765,"Anish","#c3","10/04/2005","987778765"),
+      (754,"Sagar","#d1","11/02/2004","343423452"),
+      (675,"Nikhil","#d1","09/07/2002","453463352");
 select * from books;
