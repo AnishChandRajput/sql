@@ -35,4 +35,10 @@ INNER JOIN
     empposition
 ON 
     empinfo.empid = empposition.empid;
+/* select
+table1.column1,table.column2,table2.column1,
+from 
+table1 inner join table2
+on 
+table1.matching_column = table2.matching_column;
 
