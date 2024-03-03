@@ -30,33 +30,33 @@ values(765,"Anish","#c3","10/04/2005","987778765"),
       (754,"Sagar","#d1","11/02/2004","343423452"),
       (675,"Nikhil","#d1","09/07/2002","453463352");
 select * from books;
---1
+/*1
 SELECT title, author.name AS author
 FROM books
 JOIN author ON books.author_id = author.author_id
 WHERE books.genre = 'Mystery';
---2
+/*2
 SELECT DISTINCT borrowers.name AS borrower_name, books.title AS book_title, author.name AS author_name
 FROM borrowers
 JOIN transactions ON borrowers.borrower_id = transactions.borrower_id
 JOIN books ON transactions.book_id = books.book_id
 JOIN author ON books.author_id = author.author_id
 WHERE transactions.return_date IS NULL AND transactions.borrow_date < CURDATE();
---3
+/*3
 SELECT COUNT(*) AS available_copies
 FROM books
 WHERE ISBN = '1234567890' AND book_id NOT IN (SELECT book_id FROM transactions WHERE return_date IS NULL);
---4
+/*4
 SELECT books.title AS book_title, author.name AS author_name
 FROM books
 JOIN author ON books.author_id = author.author_id
 JOIN transactions ON books.book_id = transactions.book_id
 WHERE transactions.borrower_id = 'USER001' AND return_date IS NULL;
---5
+/*5
 SELECT SUM(DATEDIFF(CURDATE(), transactions.borrow_date)) AS total_fines
 FROM transactions
 WHERE borrower_id = 'USER002' AND return_date IS NULL;
---6
+/*6
 SELECT books.title AS book_title, author.name AS author_name, COUNT(transactions.transaction_id) AS borrow_count
 FROM books
 JOIN author ON books.author_id = author.author_id
@@ -65,46 +65,46 @@ WHERE return_date IS NULL
 GROUP BY books.title, author.name
 ORDER BY borrow_count DESC
 LIMIT 5;
---7
+/*7
 SELECT title, author.name AS author
 FROM books
 JOIN author ON books.author_id = author.author_id
 WHERE books.publish_date >= DATE_SUB(CURDATE(), INTERVAL 1 YEAR);
---8
+/*8
 SELECT genre, COUNT(*) AS book_count
 FROM books
 GROUP BY genre;
---9
+/*9
 SELECT books.title AS book_title, author.name AS author_name
 FROM books
 JOIN author ON books.author_id = author.author_id
 WHERE book_id NOT IN (SELECT book_id FROM transactions WHERE return_date IS NULL)
 ORDER BY RAND();
---10
+/*10
 SELECT DISTINCT borrowers.name AS borrower_name
 FROM borrowers
 JOIN transactions ON borrowers.borrower_id = transactions.borrower_id
 JOIN books ON transactions.book_id = books.book_id
 WHERE books.ISBN = '9876543210';
---11
+/*11
 SELECT AVG(DATEDIFF(transactions.return_date, transactions.borrow_date)) AS avg_borrow_days
 FROM transactions
 WHERE return_date IS NOT NULL;
---12
+/*12
 SELECT title, COUNT(*) AS similar_books_count
 FROM books
 GROUP BY title
 HAVING COUNT(*) > 1;
---13
+/*13
 SELECT name AS user_name
 FROM borrowers
 WHERE borrower_id NOT IN (SELECT
---14
+/*14
 SELECT author.name AS author_name, COUNT(books.book_id) AS published_books_count
 FROM author
 JOIN books ON author.author_id = books.author_id
 GROUP BY author.name;
---15
+/* 15
 SELECT books.title AS book_title, author.name AS author_name, COUNT(transactions.transaction_id) AS copies_available
 FROM books
 JOIN author ON books.author_id = author.author_id
