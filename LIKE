@@ -1,0 +1,2 @@
+SELECT * FROM author
+WHERE author_name LIKE 's%';
