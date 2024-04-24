@@ -1,0 +1,16 @@
+CREATE TABLE students (
+    student_id INTEGER PRIMARY KEY,
+    student_name VARCHAR(50),
+    age INTEGER
+);
+=================================================
+ALTER TABLE students
+ADD grade CHAR(1);
+==================================================
+DROP TABLE students;
+
+
+=================================================
+ALTER TABLE students
+RENAME TO learners;
+==================================================
