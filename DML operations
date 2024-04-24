@@ -1,0 +1,13 @@
+INSERT INTO students (student_id, student_name, age)
+VALUES (101, 'John', 20);
+======================
+DELETE FROM students
+WHERE student_id = 101;
+===============================
+UPDATE students
+SET age = 21
+WHERE student_id = 101;
+=============================
+SELECT *
+FROM students
+WHERE age > 18;
